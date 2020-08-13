@@ -41,6 +41,12 @@ export class VideoCenterComponent implements OnInit {
         });
   }
 
+  onUpdateVideoEvent(video:Video){
+    this._videoService.updateVideo(video)
+                      .subscribe(resUpdateVideo => video = resUpdateVideo);
+    this.selectedVideo = null;
+  }
+
   newVideo(){
     this.hidenewVideo = false;
   }
